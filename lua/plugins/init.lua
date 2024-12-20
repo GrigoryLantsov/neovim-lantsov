@@ -30,6 +30,19 @@ return {
     require'bufferline'.setup{}
   },
   {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    config = function()
+        require("configs.cmp")
+    end,
+  },
+  {
+    "L3MON4D3/LuaSnip", -- Snippet engine
+    dependencies = {
+      "saadparwaiz1/cmp_luasnip", -- Completion source for snippets
+    },
+  },
+  {
     "ramilito/kubectl.nvim",
     config = function()
       require("kubectl").setup{
@@ -42,7 +55,7 @@ return {
           bin = "kubediff" -- or any other binary
         },
         kubectl_cmd = { cmd = "kubectl", env = {}, args = {} },
-        namespace = "All", 
+        namespace = "All",
         namespace_fallback = {}, -- If you have limited access you can list all the namespaces here
         hints = true,
         context = true,

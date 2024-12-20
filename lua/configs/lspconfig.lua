@@ -3,6 +3,8 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
 lspconfig.gopls.setup {
   cmd = {"gopls"},
@@ -25,11 +27,12 @@ lspconfig.ansiblels.setup({
   settings = {
     ansible = {
       ansible = {
-        path = "ansible",  -- Path to your Ansible binary (if needed)
+        path = "ansible",
       },
       ansiblelint = {
         path = "ansible-lint",
       }
     }
-  }
+  },
+  capabilities = capabilities
 })

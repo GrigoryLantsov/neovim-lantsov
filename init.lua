@@ -30,6 +30,9 @@ require("lazy").setup({
   {
     "ramilito/kubectl.nvim"
   },
+  {
+    "hrsh7th/nvim-cmp"
+  },
 
   { import = "plugins" },
 }, lazy_config)
