@@ -37,10 +37,15 @@ return {
     end,
   },
   {
-    "L3MON4D3/LuaSnip", -- Snippet engine
+    "L3MON4D3/LuaSnip",
     dependencies = {
-      "saadparwaiz1/cmp_luasnip", -- Completion source for snippets
+      "saadparwaiz1/cmp_luasnip",
     },
+  },
+  {
+    "towolf/vim-helm",
+    lazy = true,
+    ft = 'helm',
   },
   {
     "ramilito/kubectl.nvim",
@@ -190,6 +195,11 @@ return {
     opts = {
       ensure_installed = {
         "gopls",
+        "yaml-language-server",
+        "terraform-ls",
+        "tflint",
+        "ansible-language-server",
+        "bash-language-server"
       },
     },
   },
